@@ -464,7 +464,7 @@ pip install openai
 
 import openai
 
-openai.api_key = 'sk-proj-VnXb5dUjdKv1YwTb4zW2T3BlbkFJZJBVV3Ura2GMcMKmTsiF'
+openai.api_key = ''
 
 
 
@@ -502,7 +502,7 @@ file_id
 from openai import OpenAI
 import openai
 
-client = OpenAI(api_key = 'sk-proj-VnXb5dUjdKv1YwTb4zW2T3BlbkFJZJBVV3Ura2GMcMKmTsiF')
+client = OpenAI(api_key = '')
 
 client.files.create(
   file=open("fine_tune.jsonl", "rb"),
@@ -513,10 +513,10 @@ client.files.create(
 # In[2]:
 
 
-openai.api_key = 'sk-proj-VnXb5dUjdKv1YwTb4zW2T3BlbkFJZJBVV3Ura2GMcMKmTsiF'
+openai.api_key = ''
 
 client.fine_tuning.jobs.create(
-  training_file="file-3MOc384zgyAZYOAOeD77Nkka", 
+  training_file="", 
   model="gpt-3.5-turbo"
 )
 
@@ -538,7 +538,7 @@ pip install openai
 
 import time
 
-fine_tune_job_id = "ftjob-iy2D1bDNnFhsThPY7FFOZqVW"
+fine_tune_job_id = ""
 
 while True:
     job_status = client.fine_tuning.jobs.retrieve(fine_tune_job_id)
@@ -562,9 +562,9 @@ while True:
 
 from openai import OpenAI
 import openai
-client = OpenAI(api_key = 'sk-proj-VnXb5dUjdKv1YwTb4zW2T3BlbkFJZJBVV3Ura2GMcMKmTsiF')
+client = OpenAI(api_key = '')
 completion = client.chat.completions.create(
-  model="ft:gpt-3.5-turbo-0125:personal::9orkVuAX",
+  model="",
   messages=[
     {"role": "system", "content": "You are a chatbot that answer's question about Computer Science field accourding to given relevant data."},
     {"role": "user", "content": """real data type the real data type gives you a single-precision floating-point number, the precision of which depends on the implementation. in general, the hardware you’re using determines precision. a 64-bit machine, for example, gives you more precision than does a 32-bit machine. a floating-point number is a number that contains a decimal point. the decimal point “floats” or appears in different locations in the number, depending on the number’s value. 3.1, 3.14, and 3.14159 are examples of floating-point numbers. double precision data type the double precision data type gives you a double-precision floating- point number, the precision of which again depends on the implementation. surprisingly, the meaning of the word double also depends on the implemen- tation. double-precision arithmetic is primarily employed by scientific users. different scientific disciplines have different needs in the area of precision.', 'of course, neither of these numbers can be precisely represented in any finite amount of computer memory. on most computers, \xad floating-\u200b \xad point numbers are stored in binary, which exacerbates the problem. for example, even the value 0.1 in decimal cannot be represented by a finite number of binary digits.1 another problem with \xad floating-\u200b \xad point types is the loss of accuracy through arithmetic operations. for more information on the problems of \xad floating-\u200b \xad point notation, see any book on numerical analysis. \xad floating-\u200b \xad point values are represented as fractions and exponents, a form that is borrowed from scientific notation. older computers used a variety of different representations for \xad floating-\u200b \xad point values. however, most newer machines use the ieee \xad floating-\u200b \xad point standard 754 format. language imple- mentors use whatever representation is supported by the hardware. most lan- guages include two \xad floating-\u200b \xad point types, often called float and double. the float type is the standard size, usually stored in four bytes of memory.', 'many programming languages traditionally used two types for floating-point numbers. one type used less storage and was very imprecise (that is, it did not allow very many significant digits). the second type used double the amount of storage and so could be much more precise; it also allowed numbers that were larger (although programmers tend to care more about precision than about size). the kind of numbers that used twice as much storage were called double precision numbers; those that used less storage were called single precision. following this tradition, the type that (more or less) corresponds to this double precision type in java was named double in java. the type that corresponds to single precision in java was called float. ( actually, the type name double was inherited from c++, but this explanation applies to why the type was named double in c++, and so ultimately it is the explanation of why the type is called double in java.) quotes mixing types', '474 chapter 11 abstract data types and encapsulation constructs \xad object-\u200b \xad oriented programming, which is described in chapter 12, is an outgrowth of the use of data abstraction in software development, and data abstraction is one of its fundamental components. 11.2.1 \xad floating-\u200b \xad point as an abstract data type the concept of an abstract data type, at least in terms of \xad built-\u200b \xad in types, is not a recent development. all \xad built-\u200b \xad in data types, even those of fortran i, are abstract data types, although they are rarely called that. for example, consider a \xad floating-\u200b \xad point data type. most programming languages include at least one of these. a \xad floating-\u200b \xad point type provides the means to create variables to store \xad floating-\u200b \xad point data and also provides a set of arithmetic operations for manipulating objects of the type. \xad floating-\u200b \xad point types in \xad high-\u200b \xad level languages employ a key concept in data abstraction: information hiding. the actual format of the \xad floating-\u200b \xad point data value in a memory cell is hidden from the user, and the only operations available are those provided by the language. the user is not allowed to create new operations on data of the type, except those that can be constructed using the \xad built-\u200b \xad in opera- tions. the user cannot directly manipulate the parts of the actual representation of values because that representation is hidden.', 'the double type is provided for situations where larger fractional parts and/or a larger range of exponents is needed. \xad double-\u200b \xad precision variables usually occupy twice as much storage as float variables and provide at least twice the number of bits of fraction. the collection of values that can be represented by a \xad floating-\u200b \xad point type is defined in terms of precision and range. precision is the accuracy of the frac- tional part of a value, measured as the number of bits. range is a combination of the range of fractions and, more important, the range of exponents. figure 6.1 shows the ieee \xad floating-\u200b \xad point standard 754 format for \xad single-\u200b \xad and \xad double-\u200b \xad precision representation (ieee, 1985). details of the ieee formats can be found in t anenbaum (2005). 1. 0.1 in decimal is 0.0001100110011... in binary.
@@ -622,39 +622,9 @@ def main(querry,k):
     for ans in answer:
         content += ans
         
-    client = OpenAI(api_key = 'sk-proj-VnXb5dUjdKv1YwTb4zW2T3BlbkFJZJBVV3Ura2GMcMKmTsiF')
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    client = OpenAI(api_key = '')
     completion = client.chat.completions.create(
-        model="ft:gpt-3.5-turbo-0125:personal::9orkVuAX",
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        model="",
         messages=[
             {"role": "system", "content": "You are a chatbot that answer's question about Computer Science field accourding to given relevant data."},
             {"role": "user", "content": f"""{content}
